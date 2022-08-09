@@ -136,14 +136,21 @@ const insertFun = (a, b) => {
 };
 
 // const insert1 = insertFun("kdahe", "#");
-const insert2 = insertFun("3412453", ".");
+// const insert2 = insertFun("3412453", ".");
 // const insert3 = insertFun("2324dfdg54f", ",");
 // console.log(insert1, insert2, insert3);
 
 const insertChart = (str, c) => {
-  let resultStr = "";
-  let index = 0;
-
+  let result = [];
+  console.log(result);
+  let rest = str;
+  while (rest.length) {
+    result.push(rest.slice(-3));
+    rest = rest.slice(0, -3);
+  }
+  return result.reverse().join(c);
+  // let resultStr = "";
+  // let index = 0;
   // for (let i = str.length - 1; i > -1; i--) {
   //   index++;
   //   resultStr = str[i] + resultStr;
@@ -151,10 +158,10 @@ const insertChart = (str, c) => {
   //     resultStr = c + resultStr;
   //   }
   // }
-  return resultStr;
+  // return resultStr;
 };
 
-const input = "zxyzxyzxyzxyzxyz";
+const input = "abcdefghijklmnopqrstuvwxyz";
 const inputChar = ".";
 console.log(insertChart(input, inputChar));
 
